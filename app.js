@@ -25,6 +25,7 @@ window.addEventListener('load', () => {
           const {description} = data.weather[0]
 
           temperatureDegree.textContent = Math.round(temperature - 273.15);
+          temperatureDescription.textContent = description;
         })
 
     });
