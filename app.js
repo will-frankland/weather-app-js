@@ -21,15 +21,12 @@ window.addEventListener('load', () => {
         .then(data => {
           console.log(data);
           const temperature = data.main.temp;
-          // console.log('temp ->', temperature)
-          const {description} = data.weather[0];
+          const { description } = data.weather[0];
 
           temperatureDegree.textContent = Math.round(temperature - 273.15);
           temperatureDescription.textContent = description;
           locationTimezone.textContent = data.name;
         })
-
     });
-
   }
 });
