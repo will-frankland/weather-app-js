@@ -29,15 +29,19 @@ window.addEventListener('load', () => {
           temperatureDegree.textContent = Math.round(temperature - 273.15);
           temperatureDescription.textContent = description;
           locationTimezone.textContent = data.name;
+          // Formula for Farenheit
+          const farenheit = temperature * (9 / 5) - 459.67;
 
           setIcons(weatherDescription, document.querySelector('.icon'));
 
           // Celsius / Farenheit
           temperatureSection.addEventListener('click', () => {
-            if (temperatureSpan.textContent === "F") {
-              temperatureSpan.textContent = "C";
+            if (temperatureSpan.textContent === "C") {
+              temperatureSpan.textContent = "°F";
+              temperatureDegree.textContent = Math.floor(farenheit);
             } else {
-              temperatureSpan.textContent = "F";
+              temperatureSpan.textContent === "F";
+              temperatureSpan.textContent = "°C";
             }
           })
 
