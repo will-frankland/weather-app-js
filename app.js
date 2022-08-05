@@ -36,12 +36,13 @@ window.addEventListener('load', () => {
 
           // Celsius / Farenheit
           temperatureSection.addEventListener('click', () => {
-            if (temperatureSpan.textContent === "C") {
+            if (temperatureSpan.textContent === "°C") {
               temperatureSpan.textContent = "°F";
               temperatureDegree.textContent = Math.floor(farenheit);
             } else {
-              temperatureSpan.textContent === "F";
+              temperatureSpan.textContent === "°F";
               temperatureSpan.textContent = "°C";
+              temperatureDegree.textContent = Math.floor(temperature - 273.15)
             }
           })
 
