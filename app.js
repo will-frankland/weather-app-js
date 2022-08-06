@@ -6,10 +6,10 @@ window.addEventListener('load', () => {
   const locationTimezone = document.querySelector('.location-timezone');
   const temperatureSection = document.querySelector('.temperature');
   const temperatureSpan = document.querySelector('.temperature span');
+  const locationIcon = document.querySelector('.weather-icon');
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
-      // console.log(position);
       long = position.coords.longitude;
       lat = position.coords.latitude;
 
@@ -23,16 +23,16 @@ window.addEventListener('load', () => {
         .then(data => {
           console.log(data);
           const temperature = data.main.temp;
-          const { description } = data.weather[0];
+          const { description, icon } = data.weather[0];
           const weatherDescription = data.weather[0].main
 
           temperatureDegree.textContent = Math.round(temperature - 273.15);
           temperatureDescription.textContent = description;
           locationTimezone.textContent = data.name;
+          locationIcon.innerHTML= `<img src="icons/${icon}.png">`;
           // Formula for Farenheit
           const farenheit = temperature * (9 / 5) - 459.67;
 
-          setIcons(weatherDescription, document.querySelector('.icon'));
 
           // Celsius / Farenheit
           temperatureSection.addEventListener('click', () => {
@@ -48,12 +48,5 @@ window.addEventListener('load', () => {
 
         })
     });
-  }
-
-  function setIcons(weatherDescription, iconID) {
-    const skycons = new Skycons({color: "white"});
-    const currentIcon = weatherDescription
-    skycons.play();
-    return skycons.set(iconID, Skycons[currentIcon])
   }
 });
