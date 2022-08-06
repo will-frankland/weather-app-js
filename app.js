@@ -7,6 +7,7 @@ window.addEventListener('load', () => {
   const temperatureSection = document.querySelector('.temperature');
   const temperatureSpan = document.querySelector('.temperature span');
   const locationIcon = document.querySelector('.weather-icon');
+  const feelsLike = document.querySelector('.feels-like');
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
@@ -22,16 +23,17 @@ window.addEventListener('load', () => {
         })
         .then(data => {
           console.log(data);
-          const temperature = data.main.temp;
+          const { temp, feels_like } = data.main;
           const { description, icon } = data.weather[0];
           const weatherDescription = data.weather[0].main
 
-          temperatureDegree.textContent = Math.round(temperature - 273.15);
+          temperatureDegree.textContent = Math.round(temp - 273.15);
           temperatureDescription.textContent = description;
           locationTimezone.textContent = data.name;
+          feelsLike.textContent = 'Feels like: ' + Math.floor((feels_like - 273.15)) + '°C';
           locationIcon.innerHTML= `<img src="icons/${icon}.png">`;
           // Formula for Farenheit
-          const farenheit = temperature * (9 / 5) - 459.67;
+          const farenheit = temp * (9 / 5) - 459.67;
 
 
           // Celsius / Farenheit
@@ -42,7 +44,7 @@ window.addEventListener('load', () => {
             } else {
               temperatureSpan.textContent === "°F";
               temperatureSpan.textContent = "°C";
-              temperatureDegree.textContent = Math.floor(temperature - 273.15)
+              temperatureDegree.textContent = Math.floor(temp - 273.15)
             }
           })
 
