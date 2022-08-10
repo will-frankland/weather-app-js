@@ -41,10 +41,12 @@ window.addEventListener('load', () => {
             if (temperatureSpan.textContent === "°C") {
               temperatureSpan.textContent = "°F";
               temperatureDegree.textContent = Math.floor(farenheit);
+              feelsLike.textContent = 'Feels like: ' + Math.floor((feels_like - 273.15) * (9 / 5) + 32)  + '°F';
             } else {
               temperatureSpan.textContent === "°F";
               temperatureSpan.textContent = "°C";
               temperatureDegree.textContent = Math.floor(temp - 273.15)
+              feelsLike.textContent = 'Feels like: ' + Math.floor((feels_like - 273.15)) + '°C';
             }
           })
 
