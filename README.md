@@ -28,5 +28,5 @@ To allow the weather app to open:
 
 ## Screenshots
 
-!["Screenshot of Downtown Toronto Weather on 10th July 2022"]()
-!["Screenshot of Location Access Popup  Request"]()
+!["Screenshot of Downtown Toronto Weather on 10th July 2022"]("https://github.com/will-frankland/weather-app-js/blob/master/docs/Downtown%20Toronto%20Weather.png?raw=true")
+!["Screenshot of Location Access Popup  Request"]("https://github.com/will-frankland/weather-app-js/blob/master/docs/Location%20Access%20Popup.png?raw=true")
