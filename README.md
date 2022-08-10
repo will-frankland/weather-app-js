@@ -21,10 +21,11 @@ I used openweathermap.org API to pull weather data including the icons for this 
 
 To allow the weather app to open:
 
-1. Open the index.js file with Google Chrome
-2. open a seperate tab and navigate to: https://cors-anywhere.herokuapp.com/corsdemo & request temporary access
-3. Refresh the index.js tab and click allow on the pop-up window
-4. Weather for current location will open within several seconds
+1. Download this git to a local computer.
+2. Open the index.js file with Google Chrome
+3. open a seperate tab and navigate to: https://cors-anywhere.herokuapp.com/corsdemo & request temporary access
+4. Refresh the index.js tab and click allow on the pop-up window
+5. Weather for current location will open within several seconds
 
 ## Screenshots
 
